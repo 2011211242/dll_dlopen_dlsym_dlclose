@@ -39,8 +39,27 @@ int32 main()
     printf("div: %d\n", cac_func(8,2));
 
     /* close ddl */
+
+    /*
     dlclose(handle);
-    
+    handle = dlopen("/lib/x86_64-linux-gnu/libc.so.6", RTLD_LAZY);
+    *
+    if (NULL == handle)
+    {
+        fprintf(stderr, "%s\n", dlerror());
+        exit(EXIT_FAILURE);
+
+    }
+    dlerror();
+    */
+    /*
+    void* (*malloc_func)(size_t) = (void*(*)(size_t)) dlsym(handle, "malloc");
+    int * ptr = NULL;
+    ptr = malloc_func(sizeof(int));
+    *ptr = 4;
+    printf("%x\n", *ptr); 
+    */
+    malloc(sizeof(int));
     exit(EXIT_SUCCESS);
 }
 
